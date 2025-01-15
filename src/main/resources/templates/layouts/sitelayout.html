@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br" th:fragment="layout">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>N-Wallet</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  
+  <!-- Theme style -->
+  <link rel="stylesheet" th:href="@{/webjars/AdminLTE/3.1.0/dist/css/adminlte.min.css}">
+
+  <!-- Flag Icon-->
+  <link rel="stylesheet" th:href="@{/webjars/AdminLTE/3.1.0/dist/plugins/flag-icon-css/css/flag-icon.min.css}">
+
+  <!-- Font Awesome-->
+  <link rel="stylesheet" th:href="@{/webjars/AdminLTE/3.1.0/dist/plugins/fontawesome/css/fontawesome.min.css}">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div th:replace="~{fragments/header :: header}">
+  </div>
+    <div class="wrapper">
+    
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content">
+                  <div layout:fragment="content"></div>
+            </section>
+    
+            <!-- Main content -->
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+
+        </footer>
+    
+        <!-- Control Sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+  <!-- jQuery -->
+  <script th:src="@{/webjars/AdminLTE/3.1.0/jquery/jquery.min.js}"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script th:src="@{/webjars/AdminLTE/3.1.0/plugins/jquery-ui/jquery-ui.min.js}"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script th:src="@{/webjars/AdminLTE/3.1.0/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  <!-- AdminLTE App -->
+  <script th:src="@{/webjars/AdminLTE/3.1.0/dist/js/adminlte.min.js}"></script>
+
+</body>
+
+</html>
