@@ -26,11 +26,12 @@
   <!-- summernote -->
   <link rel="stylesheet" th:href="@{/webjars/AdminLTE/3.1.0/plugins/summernote/summernote-bs4.min.css}">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse layout-fixed">
+  
+
+<div class="wrapper">
   <div th:replace="~{fragments/app/appheader :: appheader}"></div>
   <aside th:replace="~{fragments/app/appaside :: appaside}"></aside>
-<div class="wrapper">
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div class="container-fluid" th:replace="${content}"></div>
@@ -39,7 +40,7 @@
 </div>
 <!-- ./wrapper -->
 
-<div th:replace="fragments/app/appfooter :: appfooter"></div>
+<div th:replace="~{fragments/app/appfooter :: appfooter}"></div>
 
 
 <!-- jQuery -->

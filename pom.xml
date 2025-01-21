@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.2</version>
+		<version>3.3.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.nwallet</groupId>
@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>22</java.version>
+		 <org.mapstruct.version>1.6.0</org.mapstruct.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -41,7 +42,6 @@
 		<dependency>
     <groupId>org.thymeleaf</groupId>
     <artifactId>thymeleaf</artifactId>
-    <version>3.1.2.RELEASE</version>
 </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -62,6 +62,7 @@
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-mysql</artifactId>
+			<optional>true</optional>
 		</dependency>
 
 		<dependency>
@@ -110,7 +111,19 @@
 			<artifactId>jquery-mask-plugin</artifactId>
 			<version>1.14.15</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+    <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${org.mapstruct.version}</version>
+    </dependency>
+
 	</dependencies>
+
 
 	<build>
 		<plugins>
@@ -127,6 +140,22 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.8</source> <!-- depending on your project -->
+                <target>1.8</target> <!-- depending on your project -->
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.mapstruct</groupId>
+                        <artifactId>mapstruct-processor</artifactId>
+                        <version>${org.mapstruct.version}</version>
+                    </path>
+                    <!-- other annotation processors -->
+                </annotationProcessorPaths>
+            </configuration>
+        </plugin>
 		</plugins>
 	</build>
 
