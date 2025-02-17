@@ -3,8 +3,8 @@ package com.nwallet.nwallet.core.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@AllArgsConstructor
 @Getter
+@AllArgsConstructor
 public enum TipoUsuario {
     CLIENTE (1),
     ADMIN (2);

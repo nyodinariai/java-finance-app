@@ -1,6 +1,5 @@
 package com.nwallet.nwallet.core.models;
 
-import com.nwallet.nwallet.core.enums.TipoUsuario;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,48 +8,33 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-
+@Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString(onlyExplicitlyIncluded = true)
-@Table(name = "user")
-@Entity
-public class Usuario {
-
-    @EqualsAndHashCode.Include
-    @ToString.Include
+public class Categoria {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "full_name", nullable = false)
-    private String nomeCompleto;
+    
 
     @Column(nullable = false, unique = true)
-    private String email;
+    private String nome;
 
-    @Column(nullable = false)
-    private String password;
-
-    @Column(name = "user_type", length = 8, nullable = false)
     @Enumerated(EnumType.STRING)
-    private TipoUsuario tipoUsuario;
+    @Column(nullable = false)
+    private TipoCategoria tipo;
 
-    public Long getId(){
-        return id;
+    public enum TipoCategoria{
+        RECEITA, DESPESA
     }
-
-    public TipoUsuario getTipoUsuario(){
-        return tipoUsuario;
-    }
-    
-}   
+}

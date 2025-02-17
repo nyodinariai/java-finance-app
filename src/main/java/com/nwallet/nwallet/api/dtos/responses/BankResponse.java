@@ -13,7 +13,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @JsonNaming(SnakeCaseStrategy.class)
-public class UsuarioCadastroResponse extends UsuarioResponse {
-    private TokenResponse token;
-}
+public class BankResponse {
     
+    private Long id;
+    private String nome;
+    private String compe;
+    private String isbp;
+
+}
